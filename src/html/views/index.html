@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <% var data = {
+    title: "Credit Card",
+    author: "Test"
+  }; %>
+
+  <%= _.template(require('./../includes/head.html').default)(data) %>
+
+  <body>
+
+    <%= _.template(require('./../includes/head.html').default)(data) %>
+
+    <main class="page-main">
+
+      <section class="credit-card">
+
+        <div class="container">
+
+          <div class="decor">
+            <div class="circle-1"></div>
+            <div class="circle-2"></div>
+            <div class="circle-3"></div>
+          </div>
+
+          <div class="card-holder">
+            <div class="card-wrapper">
+
+              <div class="front-side">
+                <header>
+                  <img src="../../img/visa.svg" alt="VISA logo">
+                </header>
+
+                <main>
+                  <div class="chip">
+                    <img src="../../img/chip.png" alt="Chip">
+                  </div>
+                  <p id="card-number">1234 1234 1234 1234</p>
+                </main>
+
+                <footer>
+
+                  <div class="card-info">
+                    <span class="label">Card Holder</span>
+                    <p id="holder">John Doe</p>
+                  </div>
+
+                  <div class="card-info">
+                    <span class="label">Expires</span>
+                    <p id="expires">09/20</p>
+                  </div>
+
+                  <div class="card-info">
+                    <span class="label">CVC</span>
+                    <p id="cvc">345</p>
+                  </div>
+
+                </footer>
+              </div>
+              <div class="back-side">
+                <div class="line"></div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="form-holder">
+
+            <form action="#" id="form" method="post">
+
+              <div class="form-group">
+                <label for="card-holder-name">Card holder name</label>
+                <i class="fas fa-user-alt"></i>
+                <input type="text" id="card-holder-name" name="Cardholder-Name" class="form-control" value="John Doe" required>
+              </div>
+
+              <div class="form-group">
+                <label for="card-number-input">Card number</label>
+                <i class="far fa-credit-card"></i>
+                <input type="text" id="card-number-input" name="Card-Number" class="form-control" value="1234 1234 1234 1234" required>
+              </div>
+
+              <div class="form-row">
+
+                <div class="form-group">
+                  <label for="card-expires">Card expires date</label>
+                  <i class="fas fa-calendar-alt"></i>
+                  <input type="text" id="card-expires" name="Expires-date" class="form-control" value="">
+                </div>
+
+                <div class="form-group">
+                  <label for="cvc-input">CVC</label>
+                  <i class="fas fa-lock"></i>
+                  <input type="text" id="cvc-input" name="CVC-Code" class="form-control" value="345" maxlength="3" minlength="3" required>
+                </div>
+
+              </div>
+
+              <p class="result-status">Is form valid: <span id="result"></span></p>
+
+              <button type="submit" class="btn">Check</button>
+
+            </form>
+
+          </div>
+
+        </div>
+      </section>
+
+    </main>
+
+    <%= _.template(require('./../includes/footer.html').default)(data) %>
+
+    <script src="js/bundle.js"></script>
+  </body>
+</html>

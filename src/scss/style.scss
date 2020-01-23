@@ -1,0 +1,45 @@
+$font-stack: -apple-system, BlinkMacSystemFont, Roboto, "Open Sans", "Helvetica Neue", sans-serif;
+
+@import '~bootstrap/scss/bootstrap';
+@import '~flatpickr/dist/themes/dark.css';
+@import 'card-holder';
+@import 'form-holder';
+@import 'datePicker';
+@import 'decor';
+
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  src: url(../fonts/Roboto-Regular.ttf);
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: $font-stack;
+}
+
+img {
+  max-width: 100%;
+  width: 100px;
+}
+
+.page-main {
+  height: 100%;
+}
+
+.credit-card {
+  position: relative;
+  height: inherit;
+  .container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: inherit;
+  }
+}
+
+

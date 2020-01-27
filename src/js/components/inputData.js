@@ -22,6 +22,13 @@ const inputData = {
     copyText(_cardNumberInput, _cardNumberOutput);
     copyText(_cardCodeInput, _cardCodeOutput);
 
+    _cardHolderInput.oninput = function () {
+      this.value = this.value.replace(/[^A-z ]/g, '').replace(/(\..*)\./g, '$1')
+    };
+
+    _cardCodeInput.oninput = function () {
+      this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1')
+    };
   },
   datePicker() {
     flatpickr('#card-expires', {

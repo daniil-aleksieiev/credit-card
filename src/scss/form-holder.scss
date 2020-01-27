@@ -1,6 +1,14 @@
+@import 'media';
+
 .form-holder {
   max-width: 40%;
   width: 100%;
+  @include media('<1024px') {
+    max-width: 60%;
+  }
+  @include media('<768px') {
+    max-width: 100%;
+  }
   .form-row {
     width: 100%;
     justify-content: space-between;
@@ -29,6 +37,9 @@
       top: 50%;
       transform: translateY(-50%);
       color: #fd435b;
+      @include media('<768px') {
+        font-size: 14px;
+      }
     }
     &.has-danger {
       position: relative;
@@ -42,6 +53,10 @@
     border-radius: 0;
     border-bottom: 2px solid #fd435b;
     outline: none !important;
+    @include media('<768px') {
+      font-size: 12px;
+      padding: 0 10px 0 35px;
+    }
     &[readonly] { background-color: transparent !important; }
   }
 

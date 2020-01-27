@@ -1,3 +1,5 @@
+@import 'media';
+
 .card-holder {
   max-width: 60%;
   width: 100%;
@@ -5,6 +7,17 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  @include media('<1200px') {
+    order: 2;
+    margin: 50px 0 0;
+    max-width: 70%;
+  }
+  @include media('<992px') {
+    max-width: 100%;
+  }
+  @include media('<768px') {
+    max-width: 100%;
+  }
 }
 
 .card-wrapper {
@@ -21,7 +34,13 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
+  @include media('<768px') {
+    max-width: 70%;
+  }
+  @include media('<460px') {
+    max-width: 100%;
+    margin: 0 15px;
+  }
   .front-side {
     & > header {
       width: 100%;
@@ -47,6 +66,9 @@
         font: 100 22px/1.24em 'Titillium Web', sans-serif;
         letter-spacing: .5px;
         margin: 0;
+        @include media('<768px') {
+          font-size: 20px;
+        }
       }
     }
 
@@ -78,6 +100,10 @@
     width: 100%;
     height: 100%;
     border-radius: 15px;
+    @include media('<460px') {
+      right: -20px;
+      top: 20px;
+    }
     .line {
       margin: 30px 0 0;
       background-color: rgba(#ccc, .5);

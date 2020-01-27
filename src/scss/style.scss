@@ -1,3 +1,4 @@
+@import 'media';
 $font-stack: -apple-system, BlinkMacSystemFont, Roboto, "Open Sans", "Helvetica Neue", sans-serif;
 
 @import '~bootstrap/scss/bootstrap';
@@ -39,6 +40,10 @@ img {
     display: flex;
     align-items: center;
     height: inherit;
+    @include media('<1200px') {
+      flex-direction: column;
+      justify-content: center;
+    }
   }
 }
 
